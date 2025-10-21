@@ -13,8 +13,6 @@
 </head>
 
 <body>
-
-<body>
     <a href="index.html"><h1>The Embodied Thinking Lab</h1></a>
     
     <p>
@@ -36,16 +34,46 @@
     
     <p class="contact-line">
         Contact: 
-        <a href="mailto:davidsoane@embodiedthinking.org">davidsoane</a>, 
-        <a href="mailto:salmans@embodiedthinking.org">salmans</a>, 
-        <a href="mailto:lab@embodiedthinking.org">lab</a>@embodiedthinking.org
+        <a class="email-button" href="mailto:davidsoane@embodiedthinking.org">davidsoane</a>, 
+        <a class="email-button" href="mailto:salmans@embodiedthinking.org">salmans</a>, 
+        <a class="email-button" href="mailto:lab@embodiedthinking.org">lab</a>@embodiedthinking.org
     </p>
     
     <nav>
-        <a href="/blog.html">Blog</a>
-        <a href="/research.html">Research</a>
+        <a href="/blog.html" class="nav-button">Blog</a>
+        <a href="/research.html" class="nav-button">Research</a>
+        <div class="select-wrapper">
+            <select onchange="setTheme(this.value)">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="aero">Aero</option>
+            </select>
+        </div>
+
+
     </nav>
+
+    <script>
+        function setTheme(theme) {
+
+            document.body.classList.remove('aero', 'dark');
+
+            if (theme != 'light' && theme != '') {
+                document.body.classList.add(theme);
+
+            }
+
+            localStorage.setItem('theme', theme);
+
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('theme') || 'light';
+            setTheme(saved);
+            document.querySelector('select').value = saved;
+        });
+            
+    </script>
 </body>
     
-</body>
 </html>
