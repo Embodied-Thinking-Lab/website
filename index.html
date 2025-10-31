@@ -15,6 +15,7 @@
 <body>
     <a href="index.html"><h1>The Embodied Thinking Lab</h1></a>
     
+
     <p>
         The Embodied Thinking Lab is an independent research lab focused on 
         the intersection of deep learning and robotics.
@@ -25,12 +26,10 @@
         designing both the physical machines and the intelligence.
     </p>
     
-    <div class="focus">
-        <p style="margin-bottom: 0;">
+        <p style="margin-bottom: 0;"> 
             We're currently working on Synapse-r, integrating structured reasoning 
             with diffusion based policy learning for adaptive robotic control.
         </p>
-    </div>
     
     <p class="contact-line">
         Contact: 
@@ -39,43 +38,10 @@
         <a class="email-button" href="mailto:lab@embodiedthinking.org">lab</a>@embodiedthinking.org
     </p>
     
-    <nav>
-        <a href="/blog.html" class="nav-button">Blog</a>
-        <a href="/research.html" class="nav-button">Research</a>
-        <div class="select-wrapper">
-            <select onchange="setTheme(this.value)">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-                <option value="aero">Aero</option>
-            </select>
-        </div>
+    <a href="/blog.html" class="nav-button">Blog</a>
+    <a href="/research.html" class="nav-button">Research</a>
 
 
-    </nav>
-
-    <script>
-        window.setTheme = function (theme) {
-        const body = document.body;
-        body.classList.remove('aero', 'dark', 'light');
-
-        if (theme && theme !== 'light') body.classList.add(theme);
-
-        localStorage.setItem('theme', theme);
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-        const select = document.querySelector('select');
-        if (!select) return console.warn('No <select> found.');
-
-        const saved = localStorage.getItem('theme') || 'light';
-        window.setTheme(saved);
-        select.value = saved;
-
-        select.addEventListener('change', () => {
-            window.setTheme(select.value);
-        });
-        });
-    </script>
 
 </body>
     

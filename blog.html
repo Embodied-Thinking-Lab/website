@@ -30,29 +30,6 @@
         <a href="/research.html" class="nav-button">Research</a>
     </nav>
 
-    <script>
-        window.setTheme = function (theme) {
-        const body = document.body;
-        body.classList.remove('aero', 'dark', 'light');
-
-        if (theme && theme !== 'light') body.classList.add(theme);
-
-        localStorage.setItem('theme', theme);
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-        const select = document.querySelector('select');
-        if (!select) return console.warn('No <select> found.');
-
-        const saved = localStorage.getItem('theme') || 'light';
-        window.setTheme(saved);
-        select.value = saved;
-
-        select.addEventListener('change', () => {
-            window.setTheme(select.value);
-        });
-        });
-    </script>
 
 </body>
     
